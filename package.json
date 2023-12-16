@@ -9,7 +9,7 @@
     "watch-js": "esbuild src/main.js --bundle --sourcemap=inline --target=es2017 --outfile=main.js --watch",
     "build-js": "esbuild src/main.js --bundle --minify --target=es2017 --outfile=main.js",
     "dev": "concurrently \"npm:watch-tw\" \"npm:watch-js\"",
-    "build": "concurrently \"npm:watch-tw\" \"npm:watch-js\""
+    "build": "concurrently \"npm:build-tw\" \"npm:build-js\""
   },
   "author": "",
   "license": "ISC",

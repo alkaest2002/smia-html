@@ -557,29 +557,14 @@ video {
 .grid {
   display: grid;
 }
-.h-\[500px\] {
-  height: 500px;
+.h-\[900px\] {
+  height: 900px;
 }
 .h-full {
   height: 100%;
 }
-.h-\[700px\] {
-  height: 700px;
-}
-.h-\[900px\] {
-  height: 900px;
-}
-.min-h-\[500px\] {
-  min-height: 500px;
-}
-.min-h-\[700px\] {
-  min-height: 700px;
-}
 .w-full {
   width: 100%;
-}
-.max-w-\[1200px\] {
-  max-width: 1200px;
 }
 .grow {
   flex-grow: 1;
@@ -590,44 +575,11 @@ video {
 .list-disc {
   list-style-type: disc;
 }
-.auto-cols-min {
-  grid-auto-columns: min-content;
-}
-.auto-cols-max {
-  grid-auto-columns: max-content;
-}
 .auto-cols-auto {
   grid-auto-columns: auto;
 }
-.auto-rows-auto {
-  grid-auto-rows: auto;
-}
-.auto-rows-max {
-  grid-auto-rows: max-content;
-}
-.auto-rows-min {
-  grid-auto-rows: min-content;
-}
-.auto-rows-\[minmax\(0\2c _2fr\)\] {
-  grid-auto-rows: minmax(0, 2fr);
-}
 .auto-rows-\[minmax\(100px\2c _2fr\)\] {
   grid-auto-rows: minmax(100px, 2fr);
-}
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-.grid-cols-\[minmax\(200px\2c _1fr\)_minmax\(200px\2c _1fr\)_minmax\(200px\2c _1fr\)\] {
-  grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
-}
-.grid-cols-\[minmax\(100px\2c _1fr\)_minmax\(100px\2c _1fr\)_minmax\(100px\2c _1fr\)\] {
-  grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr);
-}
-.grid-cols-\[min\(100px\2c _1fr\)_min\(100px\2c _1fr\)_min\(100px\2c _1fr\)\] {
-  grid-template-columns: min(100px, 1fr) min(100px, 1fr) min(100px, 1fr);
-}
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -717,9 +669,6 @@ video {
 .font-serif {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
-.font-sans {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
 .text-\[6rem\] {
   font-size: 6rem;
 }
@@ -741,9 +690,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(71 85 105 / var(--tw-text-opacity));
 }
-.underline {
-  text-decoration-line: underline;
-}
 .drop-shadow-lg {
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -759,6 +705,12 @@ video {
 
 #logo-text {
   font-family: adam;
+}
+
+.highlight {
+  background-color: yellow;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .odd\:bg-slate-200:nth-child(odd) {
@@ -787,10 +739,6 @@ video {
     height: 500px;
   }
 
-  .md\:min-h-\[500px\] {
-    min-height: 500px;
-  }
-
   .md\:w-\[60\%\] {
     width: 60%;
   }
@@ -801,6 +749,10 @@ video {
 }
 
 @media (min-width: 1024px) {
+
+  .lg\:max-w-\[1200px\] {
+    max-width: 1200px;
+  }
 
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));

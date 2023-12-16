@@ -13,3 +13,9 @@
 #logo-text {
   font-family: adam;
 }
+
+.highlight {
+  background-color: yellow;
+  padding-left: 2px;
+  padding-right: 2px;
+}
