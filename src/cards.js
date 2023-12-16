@@ -51,6 +51,8 @@ export default () => ({
     this.currentCardIndex = 0
   },
   selectCrumb(crumb) {
+    if (this.crumbs.findIndex(e => e == crumb) == this.crumbs.length-1)
+      return
     const truncatedCrumbs = this.crumbs.slice(0, this.crumbs.findIndex(e => e == crumb)+1);
     this.filteredDb = null;
     this.crumbs = truncatedCrumbs.slice(0, -1).length 
