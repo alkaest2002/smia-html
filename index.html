@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="it_IT" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SMIA</title>
+  <link rel="stylesheet" media="screen" href="main.css" crossorigin="anonymous">
+  <script defer src="main.js"></script>
+</head>
+
+<body class="h-full flex flex-col font-serif text-slate-600 bg-slate-100">
+  <header>
+    <section class="container max-w-[1200px] p-9 pb-0 mx-auto flex justify-center">
+      <div class="text-center">
+        <h1 class="text-[6rem] font-bold">SMIA</h1>
+        <div style="position: relative; top: -1.8rem;">
+          <h2 class="text-xl font-bold">Studio Medico Izzo Arduino</h2>
+          <p>Viale Roma 122, 00012 RM Guidonia (RM)</p>
+          <p>Scala “A” interno 5, 1° Piano</p>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main class="grow">
+    <section class="container h-full max-w-[1200px] p-9  pt-0 mx-auto">
+      <div class="flex flex-col justify-center items-center mx-auto">
+        <div class="mb-6 md:w-[60%] border-2 border-slate-600 rounded-lg p-9 drop-shadow-lg bg-white">
+          <h2 class="mb-3 text-lg font-bold">CHI SIAMO</h2>
+          <p>Presso lo studio medico Izzo Arduino, lavorano ufficiali medici sanitari autorizzati ad accertare il
+            possesso dei requisiti psico-fisici per il rilascio di documenti e certificati di varia natura.</p>
+          <p class="mt-1">Inoltre, i sanitari effettuano interventi psicoterapici e farmacologici, consulenze
+            medico-legali, assistenza infortunistica, pratiche pensionistiche, nonché valutazioni neurologiche e
+            psichiatriche per atti amministrativi e giudiziari.</p>
+          <p class="mt-5"><strong>Dott. Gualberto Arduino</strong>, Medico Psichiatra.</p>
+          <p><strong>Dott. Simeone Izzo</strong>, Medico Psichiatra.</p>
+        </div>
+        <div class="mb-6 md:w-[60%] border-2 border-slate-600 rounded-lg p-9 drop-shadow-lg bg-white">
+          <div class="mb-6">
+            <p class="mb-3 text-lg font-bold">CERTIFICATI MEDICI</p>
+            Le visite mediche finalizzate al rilascio di certificazioni sanitarie vengono effettuate <span
+              class="underline">tutte le sere, dal lunedì al venerdì, dalle ore 19:00 alle ore 20:00</span>, senza
+            necessità di prenotazione, presso la sede di Guidonia.
+          </div>
+          <div class="mb-6">
+            <p class="mb-3 text-lg font-bold">VISITE MEDICHE</p>
+            Per le visite mediche da effettuarsi per altri scopi, in altri orari o in sedi diverse da Guidonia si prega
+            di
+            contattare i sanitari al numero telefonico 0774 342.480 e fissare un appuntamento.
+          </div>
+          <div>
+            <p class="mb-3 text-lg font-bold">CONSULENZE E PERIZIE</p>
+            Per consulenze e perizie medico-legali si prega di contattare i sanitari al numero telefonico 0774 342.480 e
+            fissare un appuntamento.
+          </div>
+        </div>
+        <!-- CARDS -->
+        <div class="w-full md:w-[60%] border-2 border-slate-600 rounded-lg drop-shadow-lg bg-white">
+          <div x-data="cards()">
+            <div class="p-3 border-b border-slate-700 flex items-center">
+              <div class="flex flex-wrap gap-1">
+                <template x-for="crumb in crumbs">
+                  <a href="#" class="block p-2 px-3 bg-slate-200 rounded-full" x-text="crumb"
+                    @click.prevent="selectCrumb(crumb)"></a>
+                </template>
+              </div>
+            </div>
+            <div class="flex items-center justify-center">
+              <div class="w-full h-[500px]">
+                <template x-if="typeof cards !== 'string'">
+                  <div class="h-full w-full grid grid-cols-3 gap-2 p-2">
+                    <template x-for="card in cards">
+                      <a href="#"
+                        class="hover:border-slate-900 hover:drop-shadow odd:bg-slate-200 even:bg-slate-100 rounded-lg flex items-center justify-center border border-slate-500"
+                        @click.prevent="selectCard(card)">
+                        <div x-text="card" class="font-extrabold p-9 text-center"></div>
+                      </a>
+                    </template>
+                  </div>
+                </template>
+                <template x-if="typeof cards === 'string'">
+                  <div class="h-full w-full flex">
+                    <div x-html="cards" class="p-9">
+                      </siv>
+                    </div>
+                </template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="p-6">
+    <section class="container max-w-[1200px] p-9 mx-auto text-center">
+      Studio Medico Izzo Arduino<br />TEL. 0774 342.480. Tutti i diritti riservati.
+    </section>
+  </footer>
+</body>
+
+</html>
