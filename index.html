@@ -75,7 +75,7 @@
                     <template x-for="(card, index) in cards">
                       <div
                         class="h-full odd:bg-slate-200 even:bg-slate-100 flex flex-col items-center justify-center p-3 rounded-lg border-dotted border-2 border-slate-500 hover:drop-shadow">
-                        <a href="#" class="h-full flex flex-col items-center justify-center" @click.prevent="selectCard(card)">
+                        <a href="#" class="w-full h-full flex flex-col items-center justify-center" @click.prevent="selectCard(card)">
                           <div class="font-extrabold flex flex-col items-center justify-center">
                             <template x-if="crumbs.length==1 && index < db.icons.length -1">
                               <img x-bind:src="`images/${db.icons[index]}`" alt="image" height="50" width="50" style="filter: opacity(0.5) drop-shadow(0 0 0 #475569);">
