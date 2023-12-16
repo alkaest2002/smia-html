@@ -14,11 +14,12 @@
   <header>
     <section class="container max-w-[1200px] p-9 pb-0 mx-auto flex justify-center">
       <div class="text-center">
-        <h1 class="text-[6rem] font-bold">SMIA</h1>
+        <h1 id="logo-text" class="text-[6rem] font-bold">SMIA</h1>
         <div style="position: relative; top: -1.8rem;">
           <h2 class="text-xl font-bold">Studio Medico Izzo Arduino</h2>
           <p>Viale Roma 122, 00012 RM Guidonia (RM)</p>
           <p>Scala “A” interno 5, 1° Piano</p>
+          <p>Per info 0774 342.480</p>
         </div>
       </div>
     </section>
@@ -67,14 +68,14 @@
               </div>
             </div>
             <div class="flex items-center justify-center">
-              <div class="w-full h-[500px]">
+              <div class="w-full h-[900px] md:h-[500px]">
                 <template x-if="typeof cards !== 'string'">
-                  <div class="h-full w-full grid grid-cols-3 gap-2 p-2">
+                  <div class="h-full w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(100px,_2fr)] gap-2 p-2 auto-cols-auto">
                     <template x-for="card in cards">
                       <a href="#"
-                        class="hover:border-slate-900 hover:drop-shadow odd:bg-slate-200 even:bg-slate-100 rounded-lg flex items-center justify-center border border-slate-500"
+                        class="flex items-center justify-center p-3 rounded-lg border border-slate-500 hover:border-slate-900 hover:drop-shadow odd:bg-slate-200 even:bg-slate-100"
                         @click.prevent="selectCard(card)">
-                        <div x-text="card" class="font-extrabold p-9 text-center"></div>
+                        <div x-text="card" class=" p-9 font-extrabold text-center"></div>
                       </a>
                     </template>
                   </div>
