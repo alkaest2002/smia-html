@@ -50,20 +50,13 @@ export default () => ({
       ? this.currentDb
       : Object.keys(this.currentDb)
   },
-  start: {
-    ["@click.prevent"]() {
-      this.filteredDb = null
-      this.crumbs = ["Certificati"]
-      this.currentCardIndex = 0
-    },
-  },
   selectCard(card) {
     this.crumbs.push(card)
     this.filteredDb = this.currentDb[card]
     this.currentCardIndex = 0
   },
   selectCrumb(crumb) {
-    if (this.crumbs.findIndex(e => e == crumb) == this.crumbs.length-1)
+    if (crumb == this.crumbs.slice(-1)[0])
       return
     const truncatedCrumbs = this.crumbs.slice(0, this.crumbs.findIndex(e => e == crumb)+1);
     this.filteredDb = null;
