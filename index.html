@@ -62,7 +62,7 @@
         <div class="w-full md:w-[70%] border-2 border-slate-600 rounded-lg drop-shadow-lg bg-white">
           <div x-data="cards()">
             <div class="p-3 pb-1 border-slate-700 flex items-center">
-              <div class="flex flex-wrap gap-1">
+              <div class="flex flex-wrap gap-1" x-ref="refCrumbs">
                 <template x-for="crumb in crumbs">
                   <a href="#" class="block p-2 px-3 bg-slate-200 rounded-full" x-text="crumb"
                     @click.prevent="selectCrumb(crumb)"></a>
