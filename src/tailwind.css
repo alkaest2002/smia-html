@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .highlight {
-  background-color: rgb(255, 255, 172);
+  background-color: #ffefb8;
   padding-left: 2px;
   padding-right: 2px;
 }
