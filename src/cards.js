@@ -109,11 +109,11 @@ export default () => ({
   selectCrumb(crumb) {
     if (crumb == this.crumbs.slice(-1)[0]) return;
     const crumbIndex = this.crumbs.findIndex((e) => e == crumb);
-    const truncatedCrumbs = this.crumbs.slice(0, crumbIndex+1);
+    const truncatedCrumbs = this.crumbs.slice(1, crumbIndex+1);
     this.filteredDb = null;
-    this.crumbs = ["Certificati"]
     this.currentCardIndex = 0;
-    truncatedCrumbs.slice(1).forEach((crumb) => this.selectCard(crumb));
+    this.crumbs = ["Certificati"]
+    truncatedCrumbs.forEach((crumb) => this.selectCard(crumb));
   },
   getCardIntoView(elm) {
     if (!this.isElementInViewport(elm))
