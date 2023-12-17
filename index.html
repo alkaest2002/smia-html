@@ -81,8 +81,7 @@
                           @click.prevent="selectCard(card)">
                           <div class="font-extrabold flex flex-col items-center justify-center">
                             <template x-if="crumbs.length==1 && index < db.icons.length -1">
-                              <img x-bind:src="`images/${db.icons[index]}`" alt="image" height="50" width="50"
-                                style="filter: opacity(0.5) drop-shadow(0 0 0 #475569);">
+                              <img x-bind:src="`images/${db.icons[index]}`" alt="image" height="64" width="64">
                             </template>
                             <span x-text="card"></span>
                           </div>
