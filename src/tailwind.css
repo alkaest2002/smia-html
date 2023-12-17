@@ -2,20 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'adam';
-  src: url('adam-bold-webfont.woff2') format('woff2'),
-       url('adam-bold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-#logo-text {
-  font-family: adam;
-}
-
 .highlight {
-  background-color: yellow;
+  background-color: rgb(255, 255, 172);
   padding-left: 2px;
   padding-right: 2px;
 }
