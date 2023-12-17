@@ -90,13 +90,13 @@ export default () => ({
         content:
           "<p>I sanitari dello Studio Medico Izzo Arduino sono autorizzati alle visite mediche ed al rilascio dei seguenti certificati medici:</p><ul class='my-6 list-disc list-inside'><li>certificato medico di idoneità specifica (sana e robusta costituzione fisica) a una determinata attività lavorativa, che di solito viene richiesto all'interessato dal datore di lavoro all'atto di assunzione (Pubblica Amministrazione, Scuola, Camera Commercio, ecc.);</li><li>certificato medico attestante uno stato di buona salute (sana e robusta costituzione fisica) e un giudizio sanitario favorevole al rilascio di prestiti erogati ai dipendenti da Enti pubblici (INPDAP) o società private.</li></ul>",
       },
-    }
+    },
   },
   crumbs: ["Certificati"],
   filteredDb: null,
   currentCardIndex: 0,
   get cards() {
-    return this.filteredDb || this.db
+    return this.filteredDb || this.db;
   },
   selectCard(cardTitle) {
     this.crumbs.push(cardTitle);
@@ -104,15 +104,15 @@ export default () => ({
       ? this.filteredDb["children"][cardTitle]
       : this.db["children"][cardTitle];
     this.currentCardIndex = 0;
-    this.getCardIntoView(this.$refs.refCrumbs)
+    this.getCardIntoView(this.$refs.refCrumbs);
   },
   selectCrumb(crumb) {
     if (crumb == this.crumbs.slice(-1)[0]) return;
     const crumbIndex = this.crumbs.findIndex((e) => e == crumb);
-    const truncatedCrumbs = this.crumbs.slice(1, crumbIndex+1);
+    const truncatedCrumbs = this.crumbs.slice(1, crumbIndex + 1);
     this.filteredDb = null;
     this.currentCardIndex = 0;
-    this.crumbs = ["Certificati"]
+    this.crumbs = ["Certificati"];
     truncatedCrumbs.forEach((crumb) => this.selectCard(crumb));
   },
   getCardIntoView(elm) {
