@@ -99,9 +99,8 @@ export default () => ({
     return this.filteredDb || this.db;
   },
   selectCard(cardTitle) {
-    this.updateCrumbs(cardTitle);
     this.updateDb(cardTitle);
-    this.currentCardIndex = 0;
+    this.updateCrumbs(cardTitle);
     this.getCardIntoView(this.$refs.refCrumbs);
   },
   selectCrumb(crumb) {
@@ -109,9 +108,8 @@ export default () => ({
     const crumbIndex = this.crumbs.findIndex((e) => e == crumb);
     const truncatedCrumbs = this.crumbs.slice(0, crumbIndex + 1);
     this.filteredDb = null;
-    this.currentCardIndex = 0;
-    this.crumbs = truncatedCrumbs
-    truncatedCrumbs.slice(1).forEach(e => this.updateDb(e));
+    this.crumbs = truncatedCrumbs;
+    truncatedCrumbs.slice(1).forEach((e) => this.updateDb(e));
   },
   updateDb(cardTitle) {
     this.filteredDb = this.filteredDb
@@ -120,14 +118,14 @@ export default () => ({
   },
   updateCrumbs(cardTitle) {
     this.crumbs.push(cardTitle);
+    this.currentCardIndex = 0;
   },
   getCardIntoView(elm) {
-    if (!this.isElementInViewport(elm))
+    if (!isElementInViewport(elm))
       elm.scrollIntoView({
         behavior: "smooth",
         block: "center",
         inline: "nearest",
       });
   },
-  isElementInViewport,
 });
