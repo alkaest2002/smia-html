@@ -92,23 +92,28 @@ export default () => ({
       },
     },
   },
+  animate: true,
   crumbs: ["Certificati"],
   filteredDb: null,
   get cards() {
     return this.filteredDb || this.db;
   },
   selectCard(cardTitle) {
+    this.animate = false;
     this.updateDb(cardTitle);
     this.updateCrumbs(cardTitle);
     this.getCardIntoView(this.$refs.refCrumbs);
+    setTimeout(() => this.animate = true, 200);
   },
   selectCrumb(crumb) {
     if (crumb == this.crumbs.slice(-1)[0]) return;
+    this.animate = false;
     const crumbIndex = this.crumbs.findIndex((e) => e == crumb);
     const truncatedCrumbs = this.crumbs.slice(0, crumbIndex + 1);
     this.filteredDb = null;
     this.crumbs = truncatedCrumbs;
     truncatedCrumbs.slice(1).forEach((e) => this.updateDb(e));
+    setTimeout(() => this.animate = true, 200);
   },
   updateDb(cardTitle) {
     this.filteredDb = this.filteredDb

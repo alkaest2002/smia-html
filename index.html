@@ -78,36 +78,37 @@
             </div>
             <div class="flex items-center justify-center">
               <div class="w-full h-[1000px] md:h-[600px] overflow-auto">
-                <template x-if="'children' in cards">
-                  <div
-                    class="h-full w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(100px,_2fr)] gap-2 p-2 auto-cols-auto">
-                    <template x-for="(card, cardTitle) in cards.children">
-                      <div
-                        class="h-full odd:bg-slate-200 even:bg-slate-100 flex flex-col items-center justify-center rounded-lg border-dotted border-2 border-slate-500 hover:drop-shadow">
-                        <a href="#" class="w-full h-full flex flex-col items-center justify-center"
-                          @click.prevent="selectCard(cardTitle)">
-                          <div class="font-extrabold flex flex-col items-center justify-center">
-                            <template x-if="card.hasOwnProperty('icon')">
-                              <img x-bind:src="`images/${card.icon}`" alt="image" height="64" width="64">
-                            </template>
-                            <span x-text="cardTitle"></span>
-                          </div>
-                        </a>
-                      </div>
-                    </template>
-                  </div>
-                </template>
-                <template x-if="!('children' in cards)">
-                  <div class="h-full w-full flex">
-                    <div 
-                      x-html="cards.content" 
-                      class="p-9"></div>
-                </template>
+                <div
+                  class="h-full w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(100px,_2fr)] gap-2 p-2 auto-cols-auto"
+                  x-show="'children' in cards && animate" x-transition:enter="transition ease-out duration-200"
+                  x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
+                  x-transition:leave="transition ease-in duration-0" x-transition:leave-start="opacity-100 scale-100"
+                  x-transition:leave-end="opacity-0 scale-90">
+                  <template x-for="(card, cardTitle) in cards.children">
+                    <div
+                      class="h-full odd:bg-slate-200 even:bg-slate-100 flex flex-col items-center justify-center rounded-lg border-dotted border-2 border-slate-500 hover:drop-shadow">
+                      <a href="#" class="w-full h-full flex flex-col items-center justify-center"
+                        @click.prevent="selectCard(cardTitle)">
+                        <div class="font-extrabold flex flex-col items-center justify-center">
+                          <template x-if="card.hasOwnProperty('icon')">
+                            <img x-bind:src="`images/${card.icon}`" alt="image" height="64" width="64">
+                          </template>
+                          <span x-text="cardTitle"></span>
+                        </div>
+                      </a>
+                    </div>
+                  </template>
+                </div>
+                <div class="h-full w-full flex" x-show="!('children' in cards) && animate"
+                  x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-90"
+                  x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-0"
+                  x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+                  <div x-html="cards.content" class="p-9"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
   </main>
   <footer class="p-6">
