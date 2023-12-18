@@ -94,7 +94,6 @@ export default () => ({
   },
   crumbs: ["Certificati"],
   filteredDb: null,
-  currentCardIndex: 0,
   get cards() {
     return this.filteredDb || this.db;
   },
@@ -118,7 +117,6 @@ export default () => ({
   },
   updateCrumbs(cardTitle) {
     this.crumbs.push(cardTitle);
-    this.currentCardIndex = 0;
   },
   getCardIntoView(elm) {
     if (!isElementInViewport(elm))
