@@ -99,21 +99,27 @@ export default () => ({
     return this.filteredDb || this.db;
   },
   selectCard(cardTitle) {
-    this.crumbs.push(cardTitle);
-    this.filteredDb = this.filteredDb
-      ? this.filteredDb["children"][cardTitle]
-      : this.db["children"][cardTitle];
+    this.updateCrumbs(cardTitle);
+    this.updateDb(cardTitle);
     this.currentCardIndex = 0;
     this.getCardIntoView(this.$refs.refCrumbs);
   },
   selectCrumb(crumb) {
     if (crumb == this.crumbs.slice(-1)[0]) return;
     const crumbIndex = this.crumbs.findIndex((e) => e == crumb);
-    const truncatedCrumbs = this.crumbs.slice(1, crumbIndex + 1);
+    const truncatedCrumbs = this.crumbs.slice(0, crumbIndex + 1);
     this.filteredDb = null;
     this.currentCardIndex = 0;
-    this.crumbs = ["Certificati"];
-    truncatedCrumbs.forEach((crumb) => this.selectCard(crumb));
+    this.crumbs = truncatedCrumbs
+    truncatedCrumbs.slice(1).forEach(e => this.updateDb(e));
+  },
+  updateDb(cardTitle) {
+    this.filteredDb = this.filteredDb
+      ? this.filteredDb["children"][cardTitle]
+      : this.db["children"][cardTitle];
+  },
+  updateCrumbs(cardTitle) {
+    this.crumbs.push(cardTitle);
   },
   getCardIntoView(elm) {
     if (!this.isElementInViewport(elm))
