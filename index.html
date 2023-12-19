@@ -81,10 +81,10 @@
                 <div
                   class="h-full w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(100px,_2fr)] gap-2 p-2 auto-cols-auto"
                   x-show="'children' in cards && animate" 
-                  x-transition:enter="transition ease-out duration-500"
+                  x-transition:enter="transition ease-in duration-300"
                   x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                  x-transition:leave="transition ease-in duration-0" 
-                  x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                  x-transition:leave="transition duration-0" 
+                  x-transition:leave-start="opacity-0" x-transition:leave-end="opacity-0">
                   <template x-for="(card, cardTitle) in cards.children">
                     <div
                       class="h-full odd:bg-slate-200 even:bg-slate-100 flex flex-col items-center justify-center rounded-lg border-dotted border-2 border-slate-500 hover:drop-shadow">
@@ -101,11 +101,11 @@
                   </template>
                 </div>
                 <div class="h-full w-full flex" x-show="!('children' in cards) && animate"
-                  x-transition:enter="transition ease-out duration-500" 
+                  x-transition:enter="transition ease-in duration-300" 
                   x-transition:enter-start="opacity-0 "
                   x-transition:enter-end="opacity-100" 
-                  x-transition:leave="transition ease-in duration-0"
-                  x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0 "
+                  x-transition:leave="transition duration-0"
+                  x-transition:leave-start="opacity-0" x-transition:leave-end="opacity-0 "
                 >
                   <div x-html="cards.content" class="p-9"></div>
                 </div>
