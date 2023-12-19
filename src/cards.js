@@ -103,7 +103,7 @@ export default () => ({
     this.updateDb(cardTitle);
     this.updateCrumbs(cardTitle);
     this.getCardIntoView(this.$refs.refCrumbs);
-    setTimeout(() => this.animate = true, 200);
+    setTimeout(() => this.animate = true, 300);
   },
   selectCrumb(crumb) {
     if (crumb == this.crumbs.slice(-1)[0]) return;
@@ -113,7 +113,7 @@ export default () => ({
     this.filteredDb = null;
     this.crumbs = truncatedCrumbs;
     truncatedCrumbs.slice(1).forEach((e) => this.updateDb(e));
-    setTimeout(() => this.animate = true, 200);
+    setTimeout(() => this.animate = true, 300);
   },
   updateDb(cardTitle) {
     this.filteredDb = this.filteredDb
