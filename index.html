@@ -15,8 +15,8 @@
   <header>
     <section class="container max-w-[1200px] p-9 pb-0 mx-auto flex gap-6 justify-center items-center">
       <div class="text-center">
-        <h1 id="lgo-text" class="text-[5rem] font-bold">SM<span
-          class="bg-slate-500 text-slate-50 px-3 mx-1 rounded drop-shadow">IA</span></h1>
+        <a href="/"><h1 id="lgo-text" class="text-[5rem] font-bold">SM<span
+          class="bg-slate-500 text-slate-50 px-3 mx-1 rounded drop-shadow">IA</span></h1></a>
           <div style="position: relative; top: -.7rem;">
             <h2 class="text-xl font-bold">Studio Medico Izzo Arduino</h2>
             <p>Viale Roma 122, 00012 Guidonia (RM)</p>
@@ -46,7 +46,7 @@
             alt="doctor" 
             class="hidden lg:block self-end shrink-1 relative mr-3" 
             heigth="256" 
-            style="height: 256px;top:10px;filter: saturate(.5) hue-rotate(190deg) drop-shadow(2px 4px 6px)">
+            style="height: 256px;top:10px;filter: saturate(.2) hue-rotate(220deg) drop-shadow(2px 4px 6px)">
         </div>
         <div class="mb-6 md:w-[70%] border-2 border-slate-600 rounded-lg p-9 drop-shadow-lg bg-white">
           <div class="mb-6">
@@ -100,7 +100,7 @@
                         @click.prevent="selectCard(cardTitle)">
                         <div class="font-extrabold flex flex-col items-center justify-center">
                           <template x-if="card.hasOwnProperty('icon')">
-                            <img x-bind:src="`images/${card.icon}`" alt="image" height="64" width="64">
+                            <img x-bind:src="`images/${card.icon}`" alt="image" height="64" width="64" style="filter: saturate(0);">
                           </template>
                           <span x-text="cardTitle"></span>
                         </div>
