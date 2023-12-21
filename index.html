@@ -15,22 +15,25 @@
   <header>
     <section class="container max-w-[1200px] p-9 pb-0 mx-auto flex gap-6 justify-center items-center">
       <div class="text-center">
-        <a href="/"><h1 id="lgo-text" class="text-[5rem] font-bold">SM<span
-          class="bg-slate-500 text-slate-50 px-3 mx-1 rounded drop-shadow">IA</span></h1></a>
-          <div style="position: relative; top: -.7rem;">
-            <h2 class="text-xl font-bold">Studio Medico Izzo Arduino</h2>
-            <p>Viale Roma 122, 00012 Guidonia (RM)</p>
-          </div>
+        <a href="/">
+          <h1 id="lgo-text" class="text-[5rem] font-bold">SM<span
+              class="bg-slate-500 text-slate-50 px-3 mx-1 rounded drop-shadow">IA</span></h1>
+        </a>
+        <div style="position: relative; top: -.7rem;">
+          <h2 class="text-xl font-bold">Studio Medico Izzo Arduino</h2>
+          <p>Viale Roma 122, 00012 Guidonia (RM)</p>
         </div>
+      </div>
     </section>
   </header>
   <main class="grow">
     <section class="container h-full max-w-[1200px] px-9 mx-auto" style="padding-top: 10px;">
       <div class="flex flex-col justify-center items-center mx-auto">
-        <div class="mb-6 md:w-[70%] border-2 border-slate-600 rounded-lg drop-shadow-lg bg-white flex gap-3 overflow-hidden">
+        <div
+          class="mb-6 md:w-[70%] border-2 border-slate-600 rounded-lg drop-shadow-lg bg-white flex gap-3 overflow-hidden">
           <div class="p-9">
             <h2 class="mb-1 text-lg font-bold">CHI SIAMO</h2>
-            <p>Presso lo studio medico Izzo Arduino 
+            <p>Presso lo studio medico Izzo Arduino
               lavorano ufficiali medici autorizzati ad accertare il
               possesso dei requisiti psico-fisici per il rilascio di documenti e certificati di varia natura.</p>
             <p class="mt-1 lg:hidden">Inoltre, i sanitari effettuano consulenze
@@ -41,17 +44,13 @@
             <p><span class="font-bold">Dott. Simeone Izzo</span>, Medico Psichiatra</p>
             <p><span class="font-bold">Per info contatta</span> 0774 342.480</p>
           </div>
-          <img 
-            src="images/doc.svg" 
-            alt="doctor" 
-            class="hidden lg:block self-end shrink-1 relative mr-3" 
-            heigth="256" 
+          <img src="images/doc.svg" alt="doctor" class="hidden lg:block self-end shrink-1 relative mr-3" heigth="256"
             style="height: 256px;top:10px;filter: saturate(.2) hue-rotate(220deg) drop-shadow(2px 4px 6px)">
         </div>
         <div class="mb-6 md:w-[70%] border-2 border-slate-600 rounded-lg p-9 drop-shadow-lg bg-white">
           <div class="mb-6">
             <p class="mb-1 text-lg font-bold">CERTIFICATI MEDICI</p>
-            Le visite finalizzate al rilascio di certificati sanitari vengono effettuate <span class="highlight">tutte
+            Le visite finalizzate al rilascio di certificati medici vengono effettuate <span class="highlight">tutte
               le sere, dal lunedì al venerdì, dalle ore 19:00 alle ore 20:00, senza
               necessità di prenotazione</span>, presso la sede di Guidonia.
           </div>
@@ -62,12 +61,12 @@
             contattare i sanitari al numero telefonico <span>0774 342.480</span> e fissare un appuntamento.
           </div>
           <div class="mb-6">
-            <p class="mb-1 text-lg font-bold">CONSULENZE E PERIZIE</p>
+            <p class="mb-1 text-lg font-bold">CONSULENZE E PERIZIE MEDICO-LEGALI</p>
             Per consulenze e perizie medico-legali si prega di contattare i sanitari al numero telefonico 0774 342.480 e
             fissare un appuntamento.
           </div>
           <div>
-            <p class="mb-1 text-lg font-bold">TRATTAMENTI</p>
+            <p class="mb-1 text-lg font-bold">TERAPIE</p>
             Per terapie farmacologiche e/o psicoterapiche si prega di contattare i sanitari al numero telefonico 0774
             342.480 e
             fissare un appuntamento.
@@ -88,11 +87,10 @@
               <div class="w-full h-[1000px] md:h-[600px] overflow-auto">
                 <div
                   class="h-full w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(100px,_2fr)] gap-2 p-2 auto-cols-auto"
-                  x-show="'children' in cards && animate" 
-                  x-transition:enter="transition ease-out duration-300"
+                  x-show="'children' in cards && animate" x-transition:enter="transition ease-out duration-300"
                   x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                  x-transition:leave="transition duration-0" 
-                  x-transition:leave-start="opacity-0" x-transition:leave-end="opacity-0">
+                  x-transition:leave="transition duration-0" x-transition:leave-start="opacity-0"
+                  x-transition:leave-end="opacity-0">
                   <template x-for="(card, cardTitle) in cards.children">
                     <div
                       class="h-full odd:bg-slate-200 even:bg-slate-100 flex flex-col items-center justify-center rounded-lg border-dotted border-2 border-slate-500 hover:drop-shadow">
@@ -100,7 +98,8 @@
                         @click.prevent="selectCard(cardTitle)">
                         <div class="font-extrabold flex flex-col items-center justify-center">
                           <template x-if="card.hasOwnProperty('icon')">
-                            <img x-bind:src="`images/${card.icon}`" alt="image" height="64" width="64" style="filter: saturate(0);">
+                            <img x-bind:src="`images/${card.icon}`" alt="image" height="64" width="64"
+                              style="filter: saturate(0);">
                           </template>
                           <span x-text="cardTitle"></span>
                         </div>
@@ -109,12 +108,9 @@
                   </template>
                 </div>
                 <div class="h-full w-full flex" x-show="!('children' in cards) && animate"
-                  x-transition:enter="transition ease-out duration-300" 
-                  x-transition:enter-start="opacity-0 "
-                  x-transition:enter-end="opacity-100" 
-                  x-transition:leave="transition duration-0"
-                  x-transition:leave-start="opacity-0" x-transition:leave-end="opacity-0 "
-                >
+                  x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 "
+                  x-transition:enter-end="opacity-100" x-transition:leave="transition duration-0"
+                  x-transition:leave-start="opacity-0" x-transition:leave-end="opacity-0 ">
                   <div x-html="cards.content" class="p-9"></div>
                 </div>
               </div>
