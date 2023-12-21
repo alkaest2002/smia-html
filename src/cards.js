@@ -106,8 +106,8 @@ export default () => ({
     })
   },
   selectCrumb(crumb) {
+    if (crumb == this.crumbs.slice(-1)[0]) return;
     this.animateFn(() => {
-      if (crumb == this.crumbs.slice(-1)[0]) return;
       const crumbIndex = this.crumbs.findIndex((e) => e == crumb);
       const truncatedCrumbs = this.crumbs.slice(0, crumbIndex + 1);
       this.filteredDb = null;
